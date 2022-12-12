@@ -17,13 +17,13 @@ void appStart(void) {
   getTransactionDate(&terminal);
   if (isCardExpired(&user, &terminal) == EXPIRED_CARD) {
     printf("Error: EXPIRED_CARD\n");
-    // return;
+    return;
     }
   setMaxAmount(&terminal, maxAmount);
   getTransactionAmount(&terminal);
   if (isBelowMaxAmount(&terminal) == EXCEED_MAX_AMOUNT) {
     printf("Error: EXCEED_MAX_AMOUNT\n");
-    // return;
+    return;
     }
   // ------------------------------------------------------------------------------------------------
   ST_transaction_t transaction;
@@ -38,20 +38,20 @@ void appStart(void) {
   }
 
 void appTest() {
-  getCardHolderNameTest();
-//   getCardExpiryDateTest();
-//   getCardPANTest();
+  // getCardHolderNameTest();
+  // getCardExpiryDateTest();
+  // getCardPANTest();
 // // ----------------------------------------------------------------------------------
-//   getTransactionDateTest();
-//   isCardExpiredTest();
-//   getTransactionAmountTest();
-//   isBelowMaxAmountTest();
-//   setMaxAmountTest();
+  // getTransactionDateTest();
+  // isCardExpiredTest();
+  // getTransactionAmountTest();
+  // isBelowMaxAmountTest();
+  // setMaxAmountTest();
 // // ----------------------------------------------------------------------------------
-//   receiveTransactionDataTest();
-//   isValidAccountTest();
-//   isBlockedAccountTest();
-//   isAmountAvailableTest();
-//   saveTransactionTest();
-//   listSavedTransactionsTest();
+  // receiveTransactionDataTest();
+  // isValidAccountTest();
+  // isBlockedAccountTest();
+  // isAmountAvailableTest();
+  // saveTransactionTest();
+  listSavedTransactionsTest();
   }

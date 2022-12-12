@@ -1,7 +1,13 @@
 #include "server.h"
 
 ST_transaction_t transactionsDB[255];
-ST_accountsDB_t accountsDB[255] = { {10000.0, RUNNING, "11111111111111111"},{200.0, RUNNING, "22222222222222222"}, {500.0, BLOCKED, "33333333333333333"},{4500.0, RUNNING, "44444444444444444"},{78868.0, RUNNING, "55555555555555555"} };
+
+ST_accountsDB_t accountsDB[255] = { {10000.0, RUNNING, "11111111111111111"},
+                                    {200.0, RUNNING, "22222222222222222"},
+                                    {500.0, BLOCKED, "33333333333333333"},
+                                    {4500.0, RUNNING, "44444444444444444"},
+                                    {78868.0, RUNNING, "55555555555555555"} };
+
 uint32_t seq_num = 0;
 
 EN_transState_t receiveTransactionData(ST_transaction_t* transData) {
@@ -86,7 +92,7 @@ void listSavedTransactions(void) {
     }
   }
 // ----------------------------------------------------- Testing --------------------------------------------
-ST_cardData_t test_cases[] = { {"Hesham Hany", "798465153278945613", "02/26"}, {"Nour Magdy", "123456798132465798", "10/25"} };
+ST_cardData_t test_cases[] = { {"Hesham Hany", "798465153278945613", "02/26"}, {"Nour Magdy", "11111111111111111", "10/25"} };
 ST_accountsDB_t x;
 ST_transaction_t samples[] = { {{"User 1", "11111111111111111","11/26"},{500,20000,"10/05/2023"}},
   {{"User 2", "22222222222222222","11/27"},{10000,100000,"12/05/2023"}},
